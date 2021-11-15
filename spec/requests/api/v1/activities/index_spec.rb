@@ -69,4 +69,12 @@ RSpec.describe 'Activities Index' do
       expect(activity_forecast[:data][:attributes][:activities][1][:type]).to eq("cooking")
     end
   end
+
+  it 'throws an error if destination is blank' do
+    VCR.use_cassette("wrong-call-activities") do
+      get "/api/v1/activities?"
+
+      expect(response.status).to eq 400
+    end
+  end
 end
