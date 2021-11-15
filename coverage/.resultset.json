@@ -757,6 +757,33 @@
           null
         ]
       },
+      "/Users/jacqwhitmer/REPOS/turing/mod3/projects/sweater_weather/spec/services/activities_service_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jacqwhitmer/REPOS/turing/mod3/projects/sweater_weather/app/services/activities_service.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/jacqwhitmer/REPOS/turing/mod3/projects/sweater_weather/spec/services/forecast_service_spec.rb": {
         "lines": [
           1,
@@ -846,6 +873,6 @@
         ]
       }
     },
-    "timestamp": 1636944230
+    "timestamp": 1636993599
   }
 }
