@@ -21,7 +21,7 @@ RSpec.describe HourlyWeather do
 
     @hourly_weather = HourlyWeather.new(results)
 
-    expect(@hourly_weather.time).to eq("10:00:00 -0800")
+    expect(@hourly_weather.time).to eq("2021-11-13 10:00:00 -0800")
     expect(@hourly_weather.temperature).to eq(45.75)
     expect(@hourly_weather.conditions).to eq("cloudy")
     expect(@hourly_weather.icon).to eq("4u7")

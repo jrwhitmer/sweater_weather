@@ -71,49 +71,49 @@ class AllWeatherFacade
           {
             time: @hourly_weather_8.first.time,
             temperature: @hourly_weather_8.first.temperature,
-            condtions: @hourly_weather_8.first.conditions,
+            conditions: @hourly_weather_8.first.conditions,
             icon: @hourly_weather_8.first.icon
           },
           {
             time: @hourly_weather_8.second.time,
             temperature: @hourly_weather_8.second.temperature,
-            condtions: @hourly_weather_8.second.conditions,
+            conditions: @hourly_weather_8.second.conditions,
             icon: @hourly_weather_8.second.icon
           },
           {
             time: @hourly_weather_8.third.time,
             temperature: @hourly_weather_8.third.temperature,
-            condtions: @hourly_weather_8.third.conditions,
+            conditions: @hourly_weather_8.third.conditions,
             icon: @hourly_weather_8.third.icon
           },
           {
             time: @hourly_weather_8[3].time,
             temperature: @hourly_weather_8[3].temperature,
-            condtions: @hourly_weather_8[3].conditions,
+            conditions: @hourly_weather_8[3].conditions,
             icon: @hourly_weather_8[3].icon
           },
           {
             time: @hourly_weather_8[4].time,
             temperature: @hourly_weather_8[4].temperature,
-            condtions: @hourly_weather_8[4].conditions,
+            conditions: @hourly_weather_8[4].conditions,
             icon: @hourly_weather_8[4].icon
           },
           {
             time: @hourly_weather_8[5].time,
             temperature: @hourly_weather_8[5].temperature,
-            condtions: @hourly_weather_8[5].conditions,
+            conditions: @hourly_weather_8[5].conditions,
             icon: @hourly_weather_8[5].icon
           },
           {
             time: @hourly_weather_8[6].time,
             temperature: @hourly_weather_8[6].temperature,
-            condtions: @hourly_weather_8[6].conditions,
+            conditions: @hourly_weather_8[6].conditions,
             icon: @hourly_weather_8[6].icon
           },
           {
             time: @hourly_weather_8[7].time,
             temperature: @hourly_weather_8[7].temperature,
-            condtions: @hourly_weather_8[7].conditions,
+            conditions: @hourly_weather_8[7].conditions,
             icon: @hourly_weather_8[7].icon
           }
         ]

@@ -1,4 +1,5 @@
 require 'date'
+require 'time'
 
 class HourlyWeather
   attr_reader :time,
