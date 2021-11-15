@@ -57,9 +57,9 @@ RSpec.describe 'Activities Index' do
       expect(activity_forecast[:data][:attributes][:activities][1][:type]).to eq("busywork")
     end
   end
-  it 'returns one relaxation and one recreational if temperature is less than 50 F' do
+  it 'returns one relaxation and one cooking activity if temperature is less than 50 F' do
     VCR.use_cassette('cold-weather-activities') do
-      get "/api/v1/activities?destination=durango,co"
+      get "/api/v1/activities?destination=rochester,ny"
 
       expect(response).to be_successful
 
