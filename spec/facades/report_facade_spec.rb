@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ReportFacade do
   it 'returns a correctly formatted response with all the data from the weather one call' do
     VCR.use_cassette('all-call-weather') do
-      response = ReportFacade.new_report('denver,co')
+      response = ReportFacade.new_weather_report('denver,co')
 
       expect(response[:id]).to eq(nil)
       expect(response[:type]).to eq('forecast')
@@ -38,6 +38,28 @@ RSpec.describe ReportFacade do
       expect(response[:attributes][:hourly_weather][0]).to have_key(:conditions)
       expect(response[:attributes][:hourly_weather][0]).to have_key(:icon)
       expect(response[:attributes][:hourly_weather].length).to eq(8)
+    end
+  end
+
+  it 'returns a correctly formatted response with all the data from the pexel api' do
+    VCR.use_cassette('pexel-report') do
+      response = ReportFacade.new_background_report('denver,co')
+
+      expect(response).to be_a(Hash)
+
+      expect(response[:data][:type]).to eq('image')
+      expect(response[:data][:id]).to eq(nil)
+      expect(response[:data]).to have_key(:attributes)
+
+      expect(response[:data][:attributes]).to have_key(:image)
+
+      expect(response[:data][:attributes][:image]).to have_key(:location)
+      expect(response[:data][:attributes][:image]).to have_key(:image_url)
+      expect(response[:data][:attributes][:image]).to have_key(:credit)
+
+      expect(response[:data][:attributes][:image][:credit]).to have_key(:source)
+      expect(response[:data][:attributes][:image][:credit]).to have_key(:author)
+      expect(response[:data][:attributes][:image][:credit]).to have_key(:author_url)
     end
   end
 end

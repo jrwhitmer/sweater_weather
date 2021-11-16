@@ -1,4 +1,4 @@
-class AllWeatherFacade
+class ReportFacade
 
   def self.new_weather_report(location)
     @longlat = MapquestFacade.get_lat_long(location)
@@ -126,7 +126,7 @@ class AllWeatherFacade
     report = {
       data: {
         type: "image",
-        id: null,
+        id: nil,
         attributes: {
           image: {
             location: location,
