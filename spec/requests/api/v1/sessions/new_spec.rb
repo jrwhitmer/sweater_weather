@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'post request to new sessions' do
   it 'returns a 200 response correctly formatted' do
 
-    existing_user = User.new(email: "whatever@example.com", password: "password", api_key: "cznjkhro3h1494jeiwqd10139")
+    existing_user = User.create!(email: "whatever@example.com", password: "password", api_key: "cznjkhro3h1494jeiwqd10139")
 
     json_payload = {
       "email": "whatever@example.com",
