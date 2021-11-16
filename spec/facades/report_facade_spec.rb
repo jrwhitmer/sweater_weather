@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe AllWeatherFacade do
+RSpec.describe ReportFacade do
   it 'returns a correctly formatted response with all the data from the weather one call' do
     VCR.use_cassette('all-call-weather') do
-      response = AllWeatherFacade.new_report('denver,co')
+      response = ReportFacade.new_report('denver,co')
 
       expect(response[:id]).to eq(nil)
       expect(response[:type]).to eq('forecast')
