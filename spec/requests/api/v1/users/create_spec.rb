@@ -12,7 +12,7 @@ RSpec.describe 'post request to users#create' do
 
     expect(response.status).to eq(201)
 
-    parsed = JSON.parse(response.body)
+    parsed = JSON.parse(response.body, symbolize_names: true)
 
     expect(parsed[:data][:attributes]).to have_key(:email)
     expect(parsed[:data][:attributes]).to have_key(:api_key)

@@ -938,10 +938,10 @@
           null,
           1,
           null,
-          0,
+          1,
           null,
-          0,
-          0,
+          1,
+          1,
           null,
           null
         ]
@@ -1060,6 +1060,10 @@
           1,
           null,
           1,
+          1,
+          null,
+          null,
+          1,
           4,
           null,
           null,
@@ -1090,7 +1094,54 @@
           1,
           null,
           1,
+          null,
           1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/jacqwhitmer/REPOS/turing/mod3/projects/sweater_weather/app/models/user.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/jacqwhitmer/REPOS/turing/mod3/projects/sweater_weather/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/jacqwhitmer/REPOS/turing/mod3/projects/sweater_weather/app/serializers/user_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null,
@@ -1098,6 +1149,6 @@
         ]
       }
     },
-    "timestamp": 1637086143
+    "timestamp": 1637090312
   }
 }
