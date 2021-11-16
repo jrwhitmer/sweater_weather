@@ -1,6 +1,6 @@
-class AllWeatherFacade
+class ReportFacade
 
-  def self.new_report(location)
+  def self.new_weather_report(location)
     @longlat = MapquestFacade.get_lat_long(location)
     @current_weather = ForecastFacade.current_weather(@longlat.latitude, @longlat.longitude)
     @daily_weather_5 = ForecastFacade.daily_weather(@longlat.latitude, @longlat.longitude).first(5)
@@ -121,4 +121,24 @@ class AllWeatherFacade
     }
   end
 
+  def self.new_background_report(location)
+    @image_search = PexelFacade.image_search(location)
+    report = {
+      data: {
+        type: "image",
+        id: nil,
+        attributes: {
+          image: {
+            location: location,
+            image_url: @image_search.image_url,
+            credit: {
+              source: "pexel.com",
+              author: @image_search.photographer,
+              author_url: @image_search.photographer_url
+            }
+          }
+        }
+      }
+    }
+  end
 end
