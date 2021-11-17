@@ -14,7 +14,7 @@ RSpec.describe ForecastFacade do
       expect(current_weather.temperature).to be_a(Float)
       expect(current_weather.feels_like).to be_a(Float)
       expect(current_weather.humidity).to be_an(Integer)
-      expect(current_weather.uvi).to be_an(Integer)
+      expect(current_weather.uvi).to be_a(Float)
       expect(current_weather.visibility).to be_an(Integer)
       expect(current_weather.conditions).to be_a(String)
       expect(current_weather.icon).to be_a(String)

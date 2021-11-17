@@ -22,7 +22,7 @@ RSpec.describe ImageSearch do
               "tiny": "https://images.pexels.com/photos/9034999/pexels-photo-9034999.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280"
             }
           }
-      image_search = ImageSearch.new(results)
+      image_search = ImageSearch.new(results, 'arlington,va')
 
       expect(image_search).to be_an(ImageSearch)
   end
@@ -48,7 +48,7 @@ RSpec.describe ImageSearch do
             "tiny": "https://images.pexels.com/photos/9034999/pexels-photo-9034999.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280"
           }
         }
-    image_search = ImageSearch.new(results)
+    image_search = ImageSearch.new(results, 'arlington,va')
 
     expect(image_search.image_url).to eq("https://www.pexels.com/photo/man-and-woman-having-a-discussion-9034999/")
     expect(image_search.photographer).to eq("RODNAE Productions")

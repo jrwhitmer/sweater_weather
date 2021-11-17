@@ -8,8 +8,11 @@ RSpec.describe 'backgrounds index' do
       expect(response).to be_successful
 
       results =JSON.parse(response.body, symbolize_names: true)
+      
+      expect(results[:data][:attributes]).to have_key(:photographer)
+      expect(results[:data][:attributes]).to have_key(:photographer_url)
+      expect(results[:data][:attributes]).to have_key(:image_url)
 
-      expect(results[:data][:attributes][:image]).to have_key(:credit)
     end
   end
   it 'renders an error when no param is given in query' do
