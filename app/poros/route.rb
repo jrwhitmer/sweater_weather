@@ -16,7 +16,7 @@ class Route
         position - 1
       else
         position
-      end 
+      end
     else
       0
     end

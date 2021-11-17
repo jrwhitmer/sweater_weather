@@ -27,4 +27,20 @@ RSpec.describe 'road trip creation' do
     end
   end
 
+  it 'returns unauthorized error message if api_key is missing or incorrect' do
+    VCR.use_cassette("bad-route-call") do
+      existing_user = User.create!(email: "whatever@example.com", password: "password", api_key: "cznjkhro3h1494jeiwqd10139")
+
+      json_payload = {
+        "origin": "Denver,CO",
+        "destination": "Pueblo,CO",
+        "api_key": "czqeir3oh515jeiwqd10139"
+      }
+
+      post '/api/v1/road_trip', params: {road_trip: json_payload}
+
+      expect(response.status).to eq(400)
+    end
+  end
+
 end
