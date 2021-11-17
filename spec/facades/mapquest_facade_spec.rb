@@ -18,4 +18,22 @@ RSpec.describe MapquestFacade do
       expect(route.travel_time).to be_a(String)
     end
   end
+  it 'does not return unnecessary data in the poro' do
+    VCR.use_cassette('mapquest-no-data') do
+      lat_long = MapquestFacade.get_lat_long("denver,co")
+      route = MapquestFacade.get_route('denver,co', 'sausalito,ca')
+
+      expect(lat_long).not_to respond_to(:map_url)
+      expect(lat_long).not_to respond_to(:postal_code)
+      expect(lat_long).not_to respond_to(:options)
+      expect(lat_long).not_to respond_to(:streets)
+      expect(lat_long).not_to respond_to(:copyright)
+
+      expect(route).not_to respond_to(:has_highway)
+      expect(route).not_to respond_to(:has_tunnel)
+      expect(route).not_to respond_to(:route_error)
+      expect(route).not_to respond_to(:fuel_used)
+      expect(route).not_to respond_to(:legs)
+    end 
+  end
 end
