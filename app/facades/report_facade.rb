@@ -141,4 +141,26 @@ class ReportFacade
       }
     }
   end
+
+  def self.new_route_report(origin, destination)
+    @lat_long = MapquestFacade.get_lat_long(destination)
+    @route = MapquestFacade.get_route(origin, destination)
+    @eta_weather = ForecastFacade.hourly_weather(@lat_long.latitude, @lat_long.longitude)[@route.translated_time_position]
+
+    report = {
+      "data": {
+        "id": "null",
+        "type": "roadtrip",
+        "attributes": {
+          "start_city": origin,
+          "end_city": destination,
+          "travel_time": @route.travel_time,
+          "weather_at_eta": {
+            "temperature": @eta_weather.temperature,
+            "conditions": @eta_weather.conditions
+          }
+        }
+      }
+    }
+  end
 end

@@ -10,4 +10,12 @@ RSpec.describe MapquestFacade do
       expect(lat_long.longitude).to be_an(Float)
     end
   end
+  it 'returns the correct data from the directions api and creates a route object' do
+    VCR.use_cassette('directions-facade') do
+      route = MapquestFacade.get_route('denver,co', 'sausalito,ca')
+
+      expect(route).to be_a(Route)
+      expect(route.travel_time).to be_a(String)
+    end
+  end
 end

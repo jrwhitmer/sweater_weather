@@ -8,4 +8,10 @@ class User < ApplicationRecord
     .where('email = ?', email)
     .first
   end
+
+  def self.find_by_api_key(api_key)
+    select('users.*')
+    .where('api_key = ?', api_key)
+    .first
+  end
 end
