@@ -77,5 +77,30 @@ RSpec.describe Route do
     route = Route.new(results[:route])
 
     expect(route.travel_time).to eq("00:07:39")
+
+    bad_route = {
+
+      "route": {
+        "routeError": {
+            "errorCode": 2,
+            "message": ""
+        }
+    },
+    "info": {
+        "statuscode": 402,
+        "copyright": {
+            "imageAltText": "© 2021 MapQuest, Inc.",
+            "imageUrl": "http://api.mqcdn.com/res/mqlogo.gif",
+            "text": "© 2021 MapQuest, Inc."
+        },
+        "messages": [
+            "We are unable to route with the given locations."
+        ]
+    }
+  }
+
+  route = Route.new(bad_route[:route])
+
+  expect(route.travel_time).to eq('impossible route')
   end
 end
