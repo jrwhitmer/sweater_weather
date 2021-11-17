@@ -5,7 +5,6 @@
 [![Issues][issues-shield]][issues-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Forks][forks-shield]][forks-url]
-![Build Badge][build-badge]
 ---
 
 
@@ -29,7 +28,7 @@
   * Fork this repository
   * From the command line, install gems and set up your DB:
       * `bundle install && bundle update`
-      * `rails db:{create,migrate,seed}`
+      * `rails db:{create,migrate}`
   * Run the test suite with `bundle exec rspec -fd`
   * Run your development server with `rails s` to see the app in action.
 
@@ -110,6 +109,12 @@
 
 
 # API Endpoints
+
+get'/forecast'
+get '/backgrounds'
+post '/users'
+post '/sessions'
+post '/road_trip'
 
 </div>
 
