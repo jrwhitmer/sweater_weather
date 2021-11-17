@@ -74,7 +74,7 @@ RSpec.describe Route do
       }
     }
 
-    route = Route.new(results)
+    route = Route.new(results[:route])
 
     expect(route.travel_time).to eq("00:07:39")
   end

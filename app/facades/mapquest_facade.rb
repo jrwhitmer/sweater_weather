@@ -5,4 +5,9 @@ class MapquestFacade
     Longlat.new(data[:results].first[:locations].first[:latLng])
   end
 
+  def self.get_route(start_city, end_city)
+    data = MapquestService.request_route(start_city, end_city)
+
+    Route.new(data[:route])
+  end
 end
